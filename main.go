@@ -60,7 +60,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 
-	if port == "" {
+	if len(port) == 0 {
 		port = "3000"
 	}
 
