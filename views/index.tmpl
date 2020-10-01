@@ -1,0 +1,15 @@
+<html>
+<head><title>Joke</title></head>
+<body style="text-align: center">
+    <h1>Your joke is here</h1>
+    {{ if .hostname }}
+        <h2>Hostname: {{ .hostname }}</h2>
+    {{ end }}
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td><img src="{{ .joke.IconUrl }}" /></td>
+            <td>{{ .joke.Value }}</td>
+        </tr>
+    </table>
+</body>
+</html>
