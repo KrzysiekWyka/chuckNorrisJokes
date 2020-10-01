@@ -11,7 +11,7 @@ import (
 
 type Joke struct {
 	IconUrl string `json:"icon_url"`
-	Value string `json:"value"`
+	Value   string `json:"value"`
 }
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 		var joke Joke
 
 		if err := json.Unmarshal(body, &joke); err != nil {
-			context.HTML(http.StatusInternalServerError, "error.tmpl", gin.H{ "error": err.Error() })
+			context.HTML(http.StatusInternalServerError, "error.tmpl", gin.H{"error": err.Error()})
 
 			return
 		}
@@ -55,7 +55,7 @@ func main() {
 			hostname = hostnameEnv
 		}
 
-		context.HTML(http.StatusOK, "index.tmpl", gin.H { "joke": joke, "hostname": hostname })
+		context.HTML(http.StatusOK, "index.tmpl", gin.H{"joke": joke, "hostname": hostname})
 	})
 
 	port := os.Getenv("PORT")
